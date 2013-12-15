@@ -40,7 +40,7 @@ class="circle" style="align:left;width:20px; height:20px; display : inline"/>&nb
 				<!--	<img src='http://technomarketer.typepad.com/.a/6a00d8341bfcd953ef010536bf987c970c-pi' 
 style="width: 70%i; height:70%; margin-top: 20px; margin-bottom: 11px;"/> -->
 					<div>
-						Upload a pic<input type='file' id="framepic" name="pic" ng-model="frame.pic" onClick="return uploadpic()">
+						Upload a pic<input type='file' id="framepic" name="pic" ng-model="frame.pic">
 						<input class='typebar' name="input" type="text" id="frametext" placeholder="Enter 4 word story" ng-pattern='/^(\s*\w*\s*){4}$/' ng-model="frame.comment" required><span class='error' ng-show="newFrameForm.input.$error.required">Required</span><span  class='error' ng-show="newFrameForm.input.$error.pattern">Less than 4 words</span>
 						<!-- <br>Upload a pic:<input type="file" id="pic"><br>  -->
 						<input type="button" id="framesubmit" value="Submit" ng-click="addFrame()">
