@@ -28,8 +28,8 @@ app.controller('StoryController',function($scope){
 	   var FrameObject = Parse.Object.extend("FRAME");
 	   var queryFrames = new Parse.Query(FrameObject);
 	   queryFrames.ascending("sequence_id");
-	   queryFrames.equalTo("sid",1);
-	   $scope.sid=1;
+	   queryFrames.equalTo("sid",3);
+	   $scope.sid=3;
 	   queryFrames.find({
 		success:function(Frames)
 		{
