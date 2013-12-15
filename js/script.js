@@ -34,6 +34,7 @@ app.controller('StoryController',function($scope){
 		success:function(Frames)
 		{
 			$scope.frames = Frames;
+			$scope.slideframes=Frames;
 			$scope.loading=false;
 			$scope.lastsequenceid=Frames[Frames.length-1].get("sequence_id");
 			$scope.$apply(); //trigger digest
