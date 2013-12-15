@@ -55,18 +55,5 @@
 		<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.13.min.js"></script>
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 		<script src="js/script.js"></script>
-		<script type="text/javascript">
-			function uploadpic()
-			{
-				var fileUploadControl = $("#framepic")[0];
-				if (fileUploadControl.files.length > 0) {
-  					var file = fileUploadControl.files[0];
-  					var name = "photo.jpg";
- 
-  					var parseFile = new Parse.File(name, file);
-  					alert(parseFile);
-				}
-			}
-		</script>
 	</body>
 </html>
