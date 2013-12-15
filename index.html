@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>Never Ending Story</title>
+		<link href="http://fonts.googleapis.com/css?family=Cookie|Open+Sans:400,700" rel="stylesheet" />
+		<!-- The main CSS file -->
+		<link href="css/style.css" rel="stylesheet" />
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+
+	<body ng-app="TellAStoryApp" ng-controller="StoryController">
+
+		<div class="bar">
+			<a href="#" class="grid-icon" ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></a>
+		</div>
+
+		<ul ng-show="layout == 'grid'" class="grid">
+			<li ng-repeat="s in stories">
+				<img src={{s.pic}}></img>
+				<p>{{s.story}}</p>
+			</li>
+		</ul>
+
+		<!-- Include AngularJS from Google's CDN and the resource module -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js"></script>
+		<script src="js/script.js"></script>
+	</body>
+</html>
