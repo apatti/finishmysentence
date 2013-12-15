@@ -8,6 +8,7 @@ var app = angular.module("TellAStoryApp",[]);
 // defined below. It will be available inside the function automatically.
 
 app.controller('StoryController',function($scope){
+	$scope.layout = 'grid';
     var StoryLine = Parse.Object.extend("STORY_LINE");
     var query = new Parse.Query(StoryLine);
     query.find({
@@ -30,7 +31,7 @@ app.controller('StoryController',function($scope){
 		success:function(Frames)
 		{
 			$scope.frames = Frames;
-			$scope.layout = 'grid';
+			$scope.$apply(); //trigger digest
 		},
 		error: function(error){
 			alert("Error: "+error.code+" " + error.message);
