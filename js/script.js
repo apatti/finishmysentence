@@ -37,12 +37,13 @@ app.controller('StoryController',function($scope){
 			$scope.loading=false;
 			$scope.lastsequenceid=Frames[Frames.length-1].get("sequence_id");
 			$scope.$apply(); //trigger digest
+			//console.log("frames : " + frames);
 		},
 		error: function(error){
 			alert("Error: "+error.code+" " + error.message);
 		}
-	   });
-        // The object was retrieved successfully.
+	});
+    // The object was retrieved successfully.
       },
       error: function(object, error) {
         // The object was not retrieved successfully.
