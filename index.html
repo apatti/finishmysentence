@@ -32,9 +32,9 @@
 					<img ng-src={{frame.get('photo')._url}} />
 					<!-- description div -->
 					<div class='description'>
-						<!-- description content -->
-						<p>{{frame.get("comment")}}</p>
-						<!-- end description content -->
+	<!-- description content -->
+				<p><img align="left" ng-src="{{frame.get('user_picture')._url}}"   
+class="circle" style="align:left;width:32px;height:100%; display : inline"/>&nbsp;&nbsp;{{frame.get("comment")}}</span></p>						<!-- end description content -->
 					</div>
 					<!-- end description div -->
 				</div>
@@ -42,9 +42,10 @@
 			</li>
 			<li ng-show="!loading">
 				<form name="newFrameForm">
-					<!--<img src='images/empty_photo.jpg' style="width: 70%; height:70%; margin-top: 20px; margin-bottom: 11px;"/>-->
+				<!--	<img src='http://technomarketer.typepad.com/.a/6a00d8341bfcd953ef010536bf987c970c-pi' 
+style="width: 70%i; height:70%; margin-top: 20px; margin-bottom: 11px;"/> -->
 					<div>
-						Upload a pic<input type='file' id="framepic" name="pic" ng-model="frame.pic" onClick="return uploadpic()">
+						Upload a pic<input type='file' id="framepic" name="pic" ng-model="frame.pic">
 						<input class='typebar' name="input" type="text" id="frametext" placeholder="Enter 4 word story" ng-pattern='/^(\s*\w*\s*){4}$/' ng-model="frame.comment" required><span class='error' ng-show="newFrameForm.input.$error.required">Required</span><span  class='error' ng-show="newFrameForm.input.$error.pattern">Less than 4 words</span>
 						<!-- <br>Upload a pic:<input type="file" id="pic"><br>  -->
 						<input type="button" id="framesubmit" value="Submit" ng-click="addFrame()">

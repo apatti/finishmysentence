@@ -155,15 +155,22 @@ div.description{
 	left:0px;
 	width:100%;
 	/* styling bellow */
+	vertical-align:text-bottom;
 	background-color:black;
-	font-family: 'tahoma';
-	font-size:15px;
+	font-family: 'Helvetica';
+	font-size:14px;
 	color:white;
-	opacity:0.6; /* transparency */
+	/*opacity:0.6;*/ /* transparency */
 	filter:alpha(opacity=60); /* IE transparency */
 }
 p.description_content{
-	padding:10px;
+	padding:5px;
 	margin:0px;
 }
 
+
+.circle {
+	border-radius: 10%;
+	width: 40px;
+	/* width and height can be anything, as long as they're equal */
+}
