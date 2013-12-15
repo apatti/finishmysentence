@@ -73,7 +73,24 @@ app.controller('StoryController',function($scope){
     	frameObject.save(null,{
     		success: function(frameObject) {
     			console.log("success");
-				alert("Story updated, please refresh the screen");
+    			var FrameObject = Parse.Object.extend("FRAME");
+			    var queryFrames = new Parse.Query(FrameObject);
+			    queryFrames.ascending("sequence_id");
+			    queryFrames.equalTo("sid",3);
+			    $scope.sid=3;
+			    queryFrames.find({
+					success:function(Frames)
+					{
+						$scope.frames = Frames;
+						$scope.loading=false;
+						$scope.lastsequenceid=Frames[Frames.length-1].get("sequence_id");
+						$scope.$apply(); //trigger digest
+						//console.log("frames : " + frames);
+					},
+					error: function(error){
+						alert("Error: "+error.code+" " + error.message);
+					}
+				});
     		},
     		error: function(frameObject,error)
     		{
@@ -81,4 +98,7 @@ app.controller('StoryController',function($scope){
     		}
     	});
     }
+
 });
+
+
