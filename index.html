@@ -19,19 +19,22 @@
 		</div>
 
 		<ul ng-show="layout == 'grid'" class="grid">
+			<li ng-repeat="frame in frames">
 				<!-- wrapper div -->
-				<div ng-if="i<frames.length" class='wrapper' >
-					<img src={{frames[i].get('photo')._url}} />
+				<div class='wrapper' >
+					<img ng-src={{frame.get('photo')._url}} />
 					<!-- description div -->
 					<div class='description'>
 						<!-- description content -->
-						<p>{{frames[i].get("comment")}}</p>
+						<p>{{frame.get("comment")}}</p>
 						<!-- end description content -->
 					</div>
 					<!-- end description div -->
 				</div>
 				<!-- end wrapper div -->
-				<div ng-if ="i==frames.length">
+			</li>
+			<li>
+				<div>
 					<img src='images/empty_photo.jpg' style="width: 70%; height:70%; margin-top: 20px; margin-bottom: 11px;"/>
 					<div>
 						<input class='typebar' type="text" id="frametext" placeholder="Enter 4 word story" required>
@@ -39,9 +42,6 @@
 						<input type="button" id="framesubmit" value="Submit"><br>
 					</div>
 				</div>
-				<!--<div ng-if ="i>stories.length&&i<9">
-					
-				</div>-->
 			</li>
 		</ul>
 
