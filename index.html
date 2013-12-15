@@ -19,15 +19,34 @@
 		</div>
 
 		<ul ng-show="layout == 'grid'" class="grid">
-			<li ng-repeat="s in stories">
-				<img src={{s.pic}}></img>
-				<p>{{s.story}}</p>
+			<li ng-repeat="i in [0,1,2,3,4,5,6,7,8]">
+				<!-- wrapper div -->
+				<div ng-if="i<stories.length" class='wrapper' >
+					<img src={{stories[i].pic}} />
+					<!-- description div -->
+					<div class='description'>
+						<!-- description content -->
+						<p>{{stories[i].story}}</p>
+						<!-- end description content -->
+					</div>
+					<!-- end description div -->
+				</div>
+				<!-- end wrapper div -->
+				<div ng-if ="i==stories.length">
+					<input type="text" id="frametext" placeholder="Enter 4 word story" required><br>
+					Upload a pic:<input type="file" id="pic"><br> 
+					<input type="button" id="framesubmit" value="Submit"><br>
+				</div>
+				<!--<div ng-if ="i>stories.length&&i<9">
+					
+				</div>-->
 			</li>
 		</ul>
 
 		<!-- Include AngularJS from Google's CDN and the resource module -->
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-resource.min.js"></script>
+		<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.13.min.js"></script>
 		<script src="js/script.js"></script>
 	</body>
 </html>

@@ -97,39 +97,6 @@ section, footer, header, aside, nav{
 	text-indent: 40px;
 }
 
-
-/*-------------------------
-	List layout
---------------------------*/
-
-
-ul.list{
-	list-style: none;
-	width: 500px;
-	margin: 0 auto;
-	text-align: left;
-}
-
-ul.list li{
-	border-bottom: 1px solid #ddd;
-	padding: 10px;
-	overflow: hidden;
-}
-
-ul.list li img{
-	width:120px;
-	height:120px;
-	float:left;
-	border:none;
-}
-
-ul.list li p{
-	margin-left: 135px;
-	font-weight: bold;
-	color:#6e7a7f;
-}
-
-
 /*-------------------------
 	Grid layout
 --------------------------*/
@@ -147,6 +114,9 @@ ul.grid li{
 	float:left;
 	border:1px solid;
 	width:33%;
+	min-height:200px;
+	max-height:200px;
+	overflow:hidden;
 	box-sizing: border-box; 
 }
 
@@ -157,3 +127,24 @@ ul.grid li img{
 	border:none;
 }
 
+div.wrapper{
+	float:left; /* important */
+	position:relative; /* important(so we can absolutely position the description div */
+}
+div.description{
+	position:absolute; /* absolute position (so we can position it where we want)*/
+	bottom:0px; /* position will be on bottom */
+	left:0px;
+	width:100%;
+	/* styling bellow */
+	background-color:black;
+	font-family: 'tahoma';
+	font-size:15px;
+	color:white;
+	opacity:0.6; /* transparency */
+	filter:alpha(opacity=60); /* IE transparency */
+}
+p.description_content{
+	padding:10px;
+	margin:0px;
+}
