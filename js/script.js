@@ -8,6 +8,7 @@ var app = angular.module("TellAStoryApp",[]);
 // defined below. It will be available inside the function automatically.
 
 app.controller('StoryController',function($scope,$http){
+	$scope.layout = 'grid';
     var StoryLine = Parse.Object.extend("STORY_LINE");
     var query = new Parse.Query(StoryLine);
     query.find({
@@ -29,10 +30,7 @@ app.controller('StoryController',function($scope,$http){
 	   queryFrames.find({
 		success:function(Frames)
 		{
-			for(var i=0;i<Frames.length;i++)
-			{
-				//JSON
-			}
+			$scope.frames = Frames;
 		},
 		error: function(error){
 			alert("Error: "+error.code+" " + error.message);
@@ -45,22 +43,4 @@ app.controller('StoryController',function($scope,$http){
         // error is a Parse.Error with an error code and description.
       }
     });
-	
-	$scope.stories=[
-		{'story':'Story 1',
-		 'pic':'images/icon_01.png'},
-		{'story':'Story 2',
-		 'pic':'images/icon_02.png'},
-		 {'story':'Story 3',
-		 'pic':'images/icon_03.png'},
-		 {'story':'Story 4',
-		 'pic':'images/icon_04.png'},
-		 {'story':'Story 5',
-		 'pic':'images/icon_01.png'},
-		 {'story':'Story 6',
-		 'pic':'images/icon_02.png'},
-		 {'story':'Story 7',
-		 'pic':'images/icon_03.png'},
-		 
-	];
 });
