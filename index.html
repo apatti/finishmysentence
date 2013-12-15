@@ -19,7 +19,7 @@
 		</div>
 
 		<ul ng-show="layout == 'grid'" class="grid">
-			<li ng-repeat="i in [0,1,2,3,4,5,6,7,8]">
+			<li ng-repeat="i in [0,1,2,3,4,5,6,7,8,9]">
 				<!-- wrapper div -->
 				<div ng-if="i<frames.length" class='wrapper' >
 					<img src={{frames[i].get('photo')._url}} />
@@ -33,9 +33,12 @@
 				</div>
 				<!-- end wrapper div -->
 				<div ng-if ="i==frames.length">
-					<input type="text" id="frametext" placeholder="Enter 4 word story" required><br>
-					Upload a pic:<input type="file" id="pic"><br> 
-					<input type="button" id="framesubmit" value="Submit"><br>
+					<img src='images/empty_photo.jpg' style="width: 70%; height:70%; margin-top: 20px; margin-bottom: 11px;"/>
+					<div>
+						<input class='typebar' type="text" id="frametext" placeholder="Enter 4 word story" required>
+						<!-- <br>Upload a pic:<input type="file" id="pic"><br>  -->
+						<input type="button" id="framesubmit" value="Submit"><br>
+					</div>
 				</div>
 				<!--<div ng-if ="i>stories.length&&i<9">
 					
