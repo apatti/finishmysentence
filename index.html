@@ -21,18 +21,18 @@
 		<ul ng-show="layout == 'grid'" class="grid">
 			<li ng-repeat="i in [0,1,2,3,4,5,6,7,8]">
 				<!-- wrapper div -->
-				<div ng-if="i<stories.length" class='wrapper' >
-					<img src={{stories[i].pic}} />
+				<div ng-if="i<frames.length" class='wrapper' >
+					<img src={{frames[i].get('photo')._url}} />
 					<!-- description div -->
 					<div class='description'>
 						<!-- description content -->
-						<p>{{stories[i].story}}</p>
+						<p>{{frames[i].get("comment")}}</p>
 						<!-- end description content -->
 					</div>
 					<!-- end description div -->
 				</div>
 				<!-- end wrapper div -->
-				<div ng-if ="i==stories.length">
+				<div ng-if ="i==frames.length">
 					<input type="text" id="frametext" placeholder="Enter 4 word story" required><br>
 					Upload a pic:<input type="file" id="pic"><br> 
 					<input type="button" id="framesubmit" value="Submit"><br>
