@@ -15,12 +15,8 @@
 	<body ng-app="TellAStoryApp" ng-controller="StoryController">
 		<span><img src="images/title.png" style="width: 240px;height: 100px;"/></span>
 		<div class="bar">
-		<ul>
-		
-		<li><a class="fancybox fancybox.iframe" href="iframe.html" style="color: red;">Play</a></li>
-		
-	</ul>
-			<a href="#" class="grid-icon" ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></a>
+		<a class="fancybox fancybox.iframe list-icon" href="iframe.html" alt="Play"></a>
+		<a href="#" class="grid-icon" ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></a>
 		</div>
 		<div class="loading" ng-show="loading">
 			<img src="images/loading.gif" />
