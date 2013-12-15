@@ -35,12 +35,13 @@
 		<div class="reveal">
 
 			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides"  ng-repeat="frame in frames">
+			<div class="slides"  ng-repeat="frame in slideframes">
 				<!-- Example of nested vertical slides -->
 					<section>
-					<p><img width="178" height="238" ng-src={{frames[$index].get('photo')._url}}></p>
+					<p><img width="450" height="538" ng-src={{frames[$index].get('photo')._url}}></p>
 					<p>{{frame.get("comment")}}</p>
 					</section>
+					
 			</div>
 
 		</div>
