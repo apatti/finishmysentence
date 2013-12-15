@@ -35,13 +35,18 @@
 		<div class="reveal">
 
 			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides"  ng-repeat="frame in slideframes">
+			<div class="slides"  >
+				<section>
+					<p><img width="750" height="450" src="images/NES.png"></p>
+					<p>Enjoy the Story</p>
+				</section>
+				<section ng-repeat="frame in slideframes">
 				<!-- Example of nested vertical slides -->
 					<section>
-					<p><img width="450" height="538" ng-src={{frames[$index].get('photo')._url}}></p>
+					<p><img width="450" height="450" ng-src={{frames[$index].get('photo')._url}}></p>
 					<p>{{frame.get("comment")}}</p>
 					</section>
-					
+				</section>
 			</div>
 
 		</div>
@@ -65,6 +70,15 @@
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+
+ // Number of milliseconds between automatically proceeding to the
+    // next slide, disabled when set to 0, this value can be overwritten
+    // by using a data-autoslide attribute on your slides
+    autoSlide: 33000,
+
+    // Stop auto-sliding after user input
+    autoSlideStoppable: true,
 
 				// Parallax scrolling
 				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
