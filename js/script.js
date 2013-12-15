@@ -7,8 +7,7 @@ var app = angular.module("TellAStoryApp",[]);
 // The controller. Notice that I've included our instagram service which we
 // defined below. It will be available inside the function automatically.
 
-app.controller('StoryController',function($scope,$http){
-	$scope.layout = 'grid';
+app.controller('StoryController',function($scope){
     var StoryLine = Parse.Object.extend("STORY_LINE");
     var query = new Parse.Query(StoryLine);
     query.find({
@@ -31,6 +30,7 @@ app.controller('StoryController',function($scope,$http){
 		success:function(Frames)
 		{
 			$scope.frames = Frames;
+			$scope.layout = 'grid';
 		},
 		error: function(error){
 			alert("Error: "+error.code+" " + error.message);
