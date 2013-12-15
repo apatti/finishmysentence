@@ -33,6 +33,9 @@ section, footer, header, aside, nav{
 	display: block;
 }
 
+.loading{
+	background:#fff url(../images/loading.gif) no-repeat 50% 50%;
+}
 
 /*-------------------------
 	The search input
@@ -156,3 +159,4 @@ p.description_content{
 	padding:10px;
 	margin:0px;
 }
+

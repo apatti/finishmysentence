@@ -17,7 +17,9 @@
 		<div class="bar">
 			<a href="#" class="grid-icon" ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></a>
 		</div>
-
+		<div class="loading" ng-show="loading">
+			<img src="images/loading.gif" />
+		</div>
 		<ul ng-show="layout == 'grid'" class="grid">
 			<li ng-repeat="frame in frames">
 				<!-- wrapper div -->
@@ -33,13 +35,13 @@
 				</div>
 				<!-- end wrapper div -->
 			</li>
-			<li>
+			<li ng-show="!loading">
 				<div>
 					<img src='images/empty_photo.jpg' style="width: 70%; height:70%; margin-top: 20px; margin-bottom: 11px;"/>
 					<div>
-						<input class='typebar' type="text" id="frametext" placeholder="Enter 4 word story" required>
+						<input class='typebar' type="text" id="frametext" placeholder="Enter 4 word story" ng-model="frame.comment" required>
 						<!-- <br>Upload a pic:<input type="file" id="pic"><br>  -->
-						<input type="button" id="framesubmit" value="Submit"><br>
+						<input type="button" id="framesubmit" value="Submit" ng-click="addFrame()"><br>
 					</div>
 				</div>
 			</li>

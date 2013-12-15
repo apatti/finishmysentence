@@ -9,6 +9,7 @@ var app = angular.module("TellAStoryApp",[]);
 
 app.controller('StoryController',function($scope){
 	$scope.layout = 'grid';
+	$scope.loading=true;
     var StoryLine = Parse.Object.extend("STORY_LINE");
     var query = new Parse.Query(StoryLine);
     query.find({
@@ -31,6 +32,7 @@ app.controller('StoryController',function($scope){
 		success:function(Frames)
 		{
 			$scope.frames = Frames;
+			$scope.loading=false;
 			$scope.$apply(); //trigger digest
 		},
 		error: function(error){
@@ -44,4 +46,21 @@ app.controller('StoryController',function($scope){
         // error is a Parse.Error with an error code and description.
       }
     });
+
+    $scope.addFrame=function()
+    {
+    	var FrameObject = Parse.Object.extend("FRAME");
+    	var frameObject = new FrameObject();
+    	frameObject.set("comment",$scope.frame.comment);
+    	frameObject.set("sid",$scope.sid);
+    	frameObject.save(null,{
+    		success: function(frameObject) {
+    			console.log("success");
+    		},
+    		error: function(frameObject,error)
+    		{
+    			alert("Failed to create the story:"+error.description);
+    		}
+    	});
+    }
 });
