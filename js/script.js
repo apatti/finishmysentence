@@ -27,12 +27,15 @@ app.controller('StoryController',function($scope){
        }*/
 	   var FrameObject = Parse.Object.extend("FRAME");
 	   var queryFrames = new Parse.Query(FrameObject);
+	   queryFrames.ascending("sequence_id");
 	   queryFrames.equalTo("sid",1);
+	   $scope.sid=1;
 	   queryFrames.find({
 		success:function(Frames)
 		{
 			$scope.frames = Frames;
 			$scope.loading=false;
+			$scope.lastsequenceid=Frames[Frames.length-1].get("sequence_id");
 			$scope.$apply(); //trigger digest
 		},
 		error: function(error){
@@ -49,13 +52,27 @@ app.controller('StoryController',function($scope){
 
     $scope.addFrame=function()
     {
+       
+    	var fileUploadControl = $('#framepic')[0];
+		if (fileUploadControl.files.length > 0) {
+				var file = fileUploadControl.files[0];
+				var name = "photo.jpg";
+
+				var parseFile = new Parse.File(name, file);
+		}
+		parseFile.save().then(function(){
+		});
+
     	var FrameObject = Parse.Object.extend("FRAME");
     	var frameObject = new FrameObject();
     	frameObject.set("comment",$scope.frame.comment);
     	frameObject.set("sid",$scope.sid);
+    	frameObject.set("photo",parseFile);
+		frameObject.set("sequence_id",$scope.lastsequenceid+1);
     	frameObject.save(null,{
     		success: function(frameObject) {
     			console.log("success");
+				alert("Story updated, please refresh the screen");
     		},
     		error: function(frameObject,error)
     		{

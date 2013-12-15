@@ -36,14 +36,16 @@
 				<!-- end wrapper div -->
 			</li>
 			<li ng-show="!loading">
-				<div>
-					<img src='images/empty_photo.jpg' style="width: 70%; height:70%; margin-top: 20px; margin-bottom: 11px;"/>
+				<form name="newFrameForm">
+					<!--<img src='images/empty_photo.jpg' style="width: 70%; height:70%; margin-top: 20px; margin-bottom: 11px;"/>-->
 					<div>
-						<input class='typebar' type="text" id="frametext" placeholder="Enter 4 word story" ng-model="frame.comment" required>
+						Upload a pic<input type='file' id="framepic" name="pic" ng-model="frame.pic" onClick="return uploadpic()">
+						<input class='typebar' name="input" type="text" id="frametext" placeholder="Enter 4 word story" ng-pattern='/^(\s*\w*\s*){4}$/' ng-model="frame.comment" required><span class='error' ng-show="newFrameForm.input.$error.required">Required</span><span  class='error' ng-show="newFrameForm.input.$error.pattern">Less than 4 words</span>
 						<!-- <br>Upload a pic:<input type="file" id="pic"><br>  -->
-						<input type="button" id="framesubmit" value="Submit" ng-click="addFrame()"><br>
+						<input type="button" id="framesubmit" value="Submit" ng-click="addFrame()">
+						
 					</div>
-				</div>
+				</form>
 			</li>
 		</ul>
 
@@ -51,6 +53,20 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-resource.min.js"></script>
 		<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.13.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 		<script src="js/script.js"></script>
+		<script type="text/javascript">
+			function uploadpic()
+			{
+				var fileUploadControl = $("#framepic")[0];
+				if (fileUploadControl.files.length > 0) {
+  					var file = fileUploadControl.files[0];
+  					var name = "photo.jpg";
+ 
+  					var parseFile = new Parse.File(name, file);
+  					alert(parseFile);
+				}
+			}
+		</script>
 	</body>
 </html>

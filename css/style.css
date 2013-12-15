@@ -37,6 +37,13 @@ section, footer, header, aside, nav{
 	background:#fff url(../images/loading.gif) no-repeat 50% 50%;
 }
 
+.error{
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	color: #D8000C;
+}
+
+
 /*-------------------------
 	The search input
 --------------------------*/
