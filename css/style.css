@@ -157,13 +157,20 @@ div.description{
 	/* styling bellow */
 	background-color:black;
 	font-family: 'tahoma';
-	font-size:15px;
+	font-size:12px;
 	color:white;
 	opacity:0.6; /* transparency */
 	filter:alpha(opacity=60); /* IE transparency */
 }
 p.description_content{
 	padding:10px;
-	margin:0px;
+	margin:10px;
 }
 
+
+.circle {
+	border-radius: 10%;
+	width: 40px;
+	height: 40px; 
+	/* width and height can be anything, as long as they're equal */
+}
