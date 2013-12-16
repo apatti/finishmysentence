@@ -40,18 +40,19 @@ class="circle" style="align:left;width:32px;height:100%; display : inline"/>&nbs
 				<form name="newFrameForm">
 				<!--	<img src='http://technomarketer.typepad.com/.a/6a00d8341bfcd953ef010536bf987c970c-pi' 
 style="width: 70%i; height:70%; margin-top: 20px; margin-bottom: 11px;"/> -->
-					<div>
-						<table>
+					<div style="text-align:center;padding-top:35px">
+						<table style="width:182px;">
 							<tr>
-								<td><input type="image" src="images/upload.png" style="width:50px;height:50px;margin-left:0px;margin-right:0px" onClick="return imageOnclick()"></input></td>
-								<td><img src="images/camera-icon.png" style="width:50px;height:50px;margin-left:0px;margin-right:0px"/></td>
-								<td><img src="images/idea.png" style="width:50px;height:50px;margin-left:0px;margin-right:0px"/></td>
+								<td style="width:24%"><input type="image" src="images/upload.png" class="imagebuttons" onClick="return imageOnclick()"></input></td>
+								<td style="width:24%"><input type="image" src="images/camera-icon.png" class="imagebuttons" /></td>
+								<td style="width:24%"><input type="image" src="images/idea.png" class="imagebuttons" /></td>
+								<td style="width:24%"><input type="image" src="images/draw-icon.png" class="imagebuttons" /></td>
 							</tr>
 						</table>
 						<input type='file' id="framepic" name="pic" ng-model="frame.pic" style="display:none;">
-						<input class='typebar' name="input" type="text" id="frametext" placeholder="Enter 4 word story" ng-pattern='/^(\s*\w*\s*){4}$/' ng-model="frame.comment" required><span class='error' ng-show="newFrameForm.input.$error.required">Required</span><span  class='error' ng-show="newFrameForm.input.$error.pattern">Less than 4 words</span>
+						<input  class='typebar' name="input" type="text" id="frametext" placeholder="Enter 4 word story" ng-pattern='/^(\s*\w*\s*){4}$/' ng-model="frame.comment" required><span  class='error' ng-show="newFrameForm.input.$error.pattern">Less than 4 words</span><br/>
 						<!-- <br>Upload a pic:<input type="file" id="pic"><br>  -->
-						<input type="button" id="framesubmit" value="Publish" ng-click="addFrame()"/>
+						<input class="publishbutton blue" style="width:166px;background: #00AFEF;" type="button" id="framesubmit" value="Publish" ng-click="addFrame()"/>
 
 					</div>
 				</form>
