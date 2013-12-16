@@ -140,9 +140,9 @@ ul.grid li img{
 }
 
 input.typebar{
-	width: 115px;
+	width: 152px;
 	height: 30px;
-	margin-left: 10px;
+	padding-left: 10px;
 }
 
 div.wrapper{
@@ -168,9 +168,89 @@ p.description_content{
 	margin:0px;
 }
 
-
 .circle {
 	border-radius: 10%;
 	width: 40px;
 	/* width and height can be anything, as long as they're equal */
+}
+
+.bottom-end{
+	position:absolute; /* absolute position (so we can position it where we want)*/
+	bottom:0px; /* position will be on bottom */
+	left:0px;
+	width:100%;
+}
+
+.imagebuttons{
+width:36px;
+height:36px;
+margin-left:0px;
+margin-right:0px;	
+}
+.imageicons{
+width:36px;
+height:36px;
+margin-left:0px;
+margin-right:0px;	
+}
+
+.publishbutton {
+  border: 0 none;
+  border-radius: 2px 2px 2px 2px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial,sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 20px;
+  margin-bottom: 0;
+  margin-top: 10px;
+  padding: 7px 10px;
+  text-transform: none;
+  transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  width: 16.795%; /* auto */
+  text-align: center; /* DELETE WHEN WIDTH AUTO */
+  &.red {
+    background: none repeat scroll 0 0 $red;
+    color: $white;
+    &:hover {
+      background: none repeat scroll 0 0 $light;
+      color: $white;
+    }
+  }
+  &.dark {
+    background: none repeat scroll 0 0 $dark;
+    color: $white;
+    &:hover {
+      background: none repeat scroll 0 0 $blue;
+      color: $white;
+    }
+  }
+  &.light {
+    background: none repeat scroll 0 0 $light;
+    color: $white;
+    &:hover {
+      background: none repeat scroll 0 0 $dark;
+      color: $white;
+    }
+  }
+  &.green {
+    background: none repeat scroll 0 0 $green;
+    color: $white;
+    &:hover {
+      background: none repeat scroll 0 0 $dark;
+      color: $white;
+    }
+  }
+  &.blue {
+    background: none repeat scroll 0 0 $blue;
+    color: $white;
+    &:hover {
+      background: none repeat scroll 0 0 $dark;
+      color: $white;
+    }
+  }
 }
