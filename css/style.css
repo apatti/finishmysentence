@@ -173,6 +173,7 @@ p.description_content{
 	padding:5px;
 	margin:0px;
 	overflow:hidden;
+	word-break: break-all;
 }
 
 .circle {
