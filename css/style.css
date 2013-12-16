@@ -50,11 +50,10 @@ section, footer, header, aside, nav{
 
 
 .bar{
-	background-color:#5c9bb7;
-
-	background-image:-webkit-linear-gradient(top, #5c9bb7, #5392ad);
-	background-image:-moz-linear-gradient(top, #5c9bb7, #5392ad);
-	background-image:linear-gradient(top, #5c9bb7, #5392ad);
+	background-color:#00AFEF;
+	background-image:-webkit-linear-gradient(top, ##00AFEF, #5392ad);
+	background-image:-moz-linear-gradient(top, ##00AFEF, #5392ad);
+	background-image:linear-gradient(top, ##00AFEF, #5392ad);
 
 	box-shadow: 0 1px 1px #ccc;
 	border-radius: 2px;
