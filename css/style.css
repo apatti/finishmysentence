@@ -160,7 +160,7 @@ div.description{
 	width:100%;
 	/* styling bellow */
 	vertical-align:text-bottom;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.7);
 	font-family: 'Helvetica';
 	font-size:14px;
 	color:white;
@@ -168,9 +168,11 @@ div.description{
 	filter:alpha(opacity=60); /* IE transparency */
 }
 p.description_content{
-	line-height: 30px;
+	line-height: 40px;
+	height:40px;
 	padding:5px;
 	margin:0px;
+	overflow:hidden;
 }
 
 .circle {
