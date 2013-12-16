@@ -58,7 +58,7 @@ section, footer, header, aside, nav{
 
 	box-shadow: 0 1px 1px #ccc;
 	border-radius: 2px;
-	width: 580px;
+	width: 550px;
 	padding: 10px;
 	margin: 10px auto 25px;
 	position:relative;
@@ -120,11 +120,11 @@ ul.grid{
 }
 
 ul.grid li{
-	padding: 2px;
+	padding: 1px;
 	float:left;
-	border:1px solid;
+	border:1px solid #eee;
 	width:33%;
-	min-height:200px;
+	min-height:186px;
 	max-height:200px;
 	overflow:hidden;
 	box-sizing: border-box; 
@@ -149,6 +149,10 @@ div.wrapper{
 	float:left; /* important */
 	position:relative; /* important(so we can absolutely position the description div */
 }
+div.background
+  {
+
+}
 div.description{
 	position:absolute; /* absolute position (so we can position it where we want)*/
 	bottom:0px; /* position will be on bottom */
@@ -156,7 +160,7 @@ div.description{
 	width:100%;
 	/* styling bellow */
 	vertical-align:text-bottom;
-	background-color:black;
+	background-color: rgba(0, 0, 0, 0.7);
 	font-family: 'Helvetica';
 	font-size:14px;
 	color:white;
@@ -164,8 +168,12 @@ div.description{
 	filter:alpha(opacity=60); /* IE transparency */
 }
 p.description_content{
+	line-height: 40px;
+	height:40px;
 	padding:5px;
 	margin:0px;
+	overflow:hidden;
+	word-break: break-all;
 }
 
 .circle {

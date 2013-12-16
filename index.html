@@ -13,7 +13,7 @@
 	</head>
 
 	<body ng-app="TellAStoryApp" ng-controller="StoryController">
-		<span><img src="images/title.png" style="width: 240px;height: 100px;"/></span>
+		<span><img src="images/title.png" style="width: 291px;height: 145px;"/></span>
 		<div class="bar">
 		<a class="fancybox fancybox.iframe list-icon" href="iframe.html" alt="Play"></a>
 		<a href="#" class="grid-icon" ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></a>
@@ -29,8 +29,8 @@
 					<!-- description div -->
 					<div class='description'>
 	<!-- description content -->
-				<p><img align="left" ng-src="{{frame.get('user_picture')._url}}"   
-class="circle" style="align:left;width:32px;height:100%; display : inline"/>&nbsp;&nbsp;{{frame.get("comment")}}</span></p>						<!-- end description content -->
+				<p class="description_content"><img align="left" ng-src="{{frame.get('user_picture')._url}}"   
+class="circle" style="align:left;width:40px;height:100%; display : inline"/>&nbsp;&nbsp;{{frame.get("comment")}}</span></p>						<!-- end description content -->
 					</div>
 					<!-- end description div -->
 				</div>
@@ -45,8 +45,8 @@ style="width: 70%i; height:70%; margin-top: 20px; margin-bottom: 11px;"/> -->
 							<tr>
 								<td style="width:24%"><input type="image" src="images/upload.png" class="imagebuttons" onClick="return imageOnclick()"></input></td>
 								<td style="width:24%"><input type="image" src="images/camera-icon.png" class="imagebuttons" /></td>
-								<td style="width:24%"><input type="image" src="images/idea.png" class="imagebuttons" /></td>
 								<td style="width:24%"><input type="image" src="images/draw-icon.png" class="imagebuttons" /></td>
+								<td style="width:24%"><input type="image" src="images/idea.png" class="imagebuttons" /></td>
 							</tr>
 						</table>
 						<input type='file' id="framepic" name="pic" ng-model="frame.pic" style="display:none;">
